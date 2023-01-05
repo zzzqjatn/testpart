@@ -6,8 +6,18 @@ namespace helloworld
     {
         static void Main(string[] args)
         {
+            // { 2023.01.05 add new feature user input / Beta
+            string userInput = string.Empty;
+            Console.WriteLine("This program convert cm to Inch");
+            Console.Write("Input cm value : ");
+            userInput = Console.ReadLine();
+
+            int cmInput = 0;
+            int.TryParse(userInput,out cmInput);
+
             Ruler ruler = new Ruler(10);
             ruler.Run();
+            // } 2023.01.05 add new feature user input / Beta
         }
 
         public class Ruler
