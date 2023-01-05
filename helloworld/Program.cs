@@ -17,7 +17,9 @@ namespace helloworld
             public float Inch
             {
                 get { return Centimeter * ONE_INCH; }
-                private set { Centimeter = (int)(value / ONE_INCH); }
+            // {    2023.01.05  Add new feature Set Inch Func / Gamma
+                private set { SetInch(value); }
+            // }    2023.01.05  Add new feature Set Inch Func / Gamma
             }
             public Ruler(int cmvalue) { Centimeter = cmvalue; }
 
@@ -25,6 +27,13 @@ namespace helloworld
             {
                 Console.WriteLine($"{Centimeter}cm 는 {Inch}inch 입니다.");
             }
+
+            // {    2023.01.05  Add new feature Set Inch Func / Gamma
+            private void SetInch(float inchvalue)
+            {
+                Centimeter = (int)(inchvalue / ONE_INCH);
+            }
+            // }    2023.01.05  Add new feature Set Inch Func / Gamma
         } //    class ruler
     }
 }
